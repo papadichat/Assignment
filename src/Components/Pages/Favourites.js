@@ -1,5 +1,5 @@
 import React from 'react';
-import FavouriteItem from '../Planet/PlanetItem';
+import FavouriteItem from '../Planet/FavouriteItem';
 import Spinner from '../Layout/Spinner'
 
 

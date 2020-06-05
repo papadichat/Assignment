@@ -12,7 +12,7 @@ const Navbar = () => {
 
                         </li>
                      <li>
-                     <Link to="/Favourites"> Favourites </Link>
+                     <Link to="/favourites"> Favourites </Link>
                          </li>   
 
                     

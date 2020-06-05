@@ -1,15 +1,29 @@
 
-import React,{useState} from 'react';
+import React,{useEffect,useState} from 'react';
 import PropTypes from 'prop-types'
 
 
 const PlanetItem = ({planet,onChange}) => {
 
-    const [checked,setChecked]=useState(true);
+    const [checked,setChecked]=useState(false);
+    //sessionStorage.setItem(planet.id,true);
+    // useEffect(() => {
+    // sessionStorage.setItem(planet.id,false);
 
-        const onChange1=(e) =>{
+    // }, [planet.id])
+
+
+        const onChange1= (e) =>{
         onChange(e);
+        let val=sessionStorage.getItem(planet.id);
+        console.log(typeof(val));
+        var mybool = JSON.parse(val);
+        console.log(typeof(mybool));
+        sessionStorage.setItem(planet.id,!mybool);
         setChecked(!checked);
+        
+        
+        
     }
 
   
@@ -23,7 +37,7 @@ const PlanetItem = ({planet,onChange}) => {
                    
                    <div >
                    <label>
-                  <input type="checkbox" id={planet.id} onChange={onChange1} checked={checked}/>
+                  <input type="checkbox" id={planet.id} onChange={onChange1} checked={JSON.parse(sessionStorage.getItem(planet.id))}/>
                     Mark as favourite
                    </label>
                    </div>

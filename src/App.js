@@ -15,6 +15,7 @@ import Favourites from './Components/Pages/Favourites'
 
   useEffect(() => {
     // setLoading(true);
+    sessionStorage.clear();
     fetch('https://assignment-machstatz.herokuapp.com/planet')
     .then(res => res.json())
     .then(data=> {
@@ -22,6 +23,7 @@ import Favourites from './Components/Pages/Favourites'
       console.log(data);
       setLoading(false);
       // setChecked(data.map(planet => [planet.id,false]));
+      
 
     },[])
     .catch(err => console.log(err))
